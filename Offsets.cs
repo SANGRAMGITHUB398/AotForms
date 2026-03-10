@@ -1,0 +1,292 @@
+﻿//namespace AotForms
+//{
+//    internal static class Offsets
+//    {
+//        // =========================
+//        // IL2CPP & BASE OFFSETS
+//        // =========================
+
+//        internal static uint Il2Cpp;
+//        internal static uint InitBase = 0xA3F438C;
+
+//        // =========================
+//        // MATCH OFFSETS
+//        // =========================
+
+//        internal static uint StaticClass = 0x5C;
+//        internal static uint CurrentMatch = 0x50;
+//        internal static uint MatchStatus = 0x8;
+//        internal static uint GameTimer = 0x10;
+//        internal static uint FixedDeltaTime = 0x24;
+//        internal static uint[] SpeedJoystickOffsets =
+//  {
+//  0x44
+//};
+
+
+//        // =========================
+//        // LOCAL / PLAYER OFFSETS
+//        // =========================
+
+//        internal static uint LocalPlayer = 0x7C;
+//        internal static uint PlayerRotation = 0xFC;
+//        internal static uint Player_IsDead = 0x4C;
+//        internal static uint Player_Data = 0x44;
+//        internal static uint CurrentHP = 0x2C8;
+//        internal static uint Player_Name = 0x28C;
+//        internal static uint IsBot = 0x294;
+//        internal static uint DictionaryEntities = 0x68;
+//        internal static uint Player_ShadowBase = 0x15E8;
+//        internal static uint PlayerAttributes = 0x45C;
+//        internal static uint AimbotVisible = 0x434;
+//        internal static uint XPose = 0x78;
+//        internal static uint BotOffset = 0x58;
+//        internal static uint HeadCollider = 0x444;
+
+//        // =========================
+//        // AVATAR OFFSETS
+//        // =========================
+
+//        internal static uint AvatarManager = 0x460;
+//        internal static uint Avatar = 0x94;
+//        internal static uint Avatar_IsVisible = 0x7C;
+//        internal static uint Avatar_Data = 0x10;
+//        internal static uint Avatar_Data_IsTeam = 0x51;
+//        internal static uint AvatarPropManager = 0xBC;
+
+//        // =========================
+//        // CAMERA OFFSETS
+//        // =========================
+
+//        internal static uint FollowCamera = 0x3F0;
+//        internal static uint Camera = 0x14;
+//        internal static uint AimRotation = 0x3A8;
+//        internal static uint MainCameraTransform = 0x1FC;
+//        internal static uint ViewMatrix = 0x98 + 0x24;
+
+//        // =========================
+//        // WEAPON OFFSETS
+//        // =========================
+
+//        internal static uint Weapon = 0x39C;
+//        internal static uint ActiveWeapon = 0x39C;
+//        internal static uint WeaponOnHand = 0x4C;
+//        internal static uint WeaponData = 0x64;
+//        internal static uint WeaponID = 0x8;
+//        internal static uint WeaponName = 0x64;
+//        internal static uint WeaponInfo = 0x64;
+//        internal static uint WeaponRecoil = 0x91;
+//        internal static uint UnkPlayerWeaponInfoClass = 0x444;
+//        internal static uint NoReload = 0x91;
+//        internal static uint AimAssist = 0x3C8;
+
+//        // =========================
+//        // SILENT AIM OFFSETS
+//        // =========================
+
+//        internal static uint sAim1 = 0x4E0;
+//        internal static uint sAim2 = 0x8F0;
+//        internal static uint sAim3 = 0x38;
+//        internal static uint sAim4 = 0x2C;
+//    }
+//}
+
+
+namespace AotForms
+{
+    internal static class Offsets
+    {
+        // Check karne ke liye ki kaunsa game chal raha hai
+        public static bool IsMax = false;
+
+        // IL2CPP & BASE
+        internal static ulong Il2Cpp;
+        internal static ulong InitBase;
+
+        // MATCH OFFSETS
+        internal static uint StaticClass;
+        internal static uint DisableAFK;
+        internal static uint CurrentMatch;
+        internal static uint MatchStatus;
+        internal static uint GameTimer;
+        internal static uint FixedDeltaTime;
+        internal static uint[] SpeedJoystickOffsets;
+
+        // LOCAL / PLAYER OFFSETS
+        internal static uint PlayerRotation;
+        internal static uint LocalPlayer;
+        internal static uint Player_IsDead;
+        internal static uint Player_Data;
+        internal static uint CurrentHP;
+        internal static uint Player_Name;
+        internal static uint IsBot;
+        internal static uint DictionaryEntities;
+        internal static uint Player_ShadowBase;
+        internal static uint PlayerAttributes;
+        internal static uint AimbotVisible;
+        internal static uint XPose;
+        internal static uint BotOffset;
+
+        // AVATAR OFFSETS
+        internal static uint AvatarManager;
+        internal static uint Avatar;
+        internal static uint Avatar_IsVisible;
+        internal static uint Avatar_Data;
+        internal static uint Avatar_Data_IsTeam;
+        internal static uint AvatarPropManager;
+
+        // CAMERA OFFSETS
+        internal static uint FollowCamera;
+        internal static uint Camera;
+        internal static uint AimRotation;
+        internal static uint MainCameraTransform;
+        internal static uint ViewMatrix;
+
+        // WEAPON OFFSETS
+        internal static uint Weapon;
+        internal static uint ActiveWeapon;
+        internal static uint WeaponOnHand;
+        internal static uint WeaponID;
+        internal static uint WeaponRecoil;
+        internal static uint WeaponData;
+        internal static uint WeaponInfo;
+        internal static uint WeaponName;
+        internal static uint UnkPlayerWeaponInfoClass;
+        internal static uint UnkPlayerWeaponInfoClass1;
+        internal static uint NoReload;
+        internal static uint AimAssist;
+
+        // SILENT AIM OFFSETS
+        internal static uint sAim1;
+        internal static uint sAim2;
+        internal static uint sAim3;
+        internal static uint sAim4;
+
+        // --- DYNAMIC LOAD FUNCTION ---
+        public static void LoadOffsets(bool forMax)
+        {
+            IsMax = forMax;
+
+            Bones.LoadBones(forMax);
+
+            if (forMax)
+            {
+                // ==========================================
+                // FREE FIRE MAX OFFSETS (Yahan Max wale dalo)
+                // ==========================================
+                InitBase = 0xB29057C;
+                StaticClass = 0x5C;
+                CurrentMatch = 0x50;
+                MatchStatus = 0x74;
+                GameTimer = 0x10;
+                FixedDeltaTime = 0x24;
+                SpeedJoystickOffsets = new uint[] { 0x44 };
+
+                PlayerRotation = 0xFC;
+                LocalPlayer = 0x7C;
+                Player_IsDead = 0x4C;
+                Player_Data = 0x44;
+                CurrentHP = 0x2B8;
+                Player_Name = 0x27C;
+                IsBot = 0x284;
+                DictionaryEntities = 0x68;
+                Player_ShadowBase = 0x15BC;
+                PlayerAttributes = 0x44C;
+                AimbotVisible = 0x434;
+                XPose = 0x78;
+                BotOffset = 0x58;
+                DisableAFK = 0x6B2;
+
+                AvatarManager = 0x450;
+                Avatar = 0x94;
+                Avatar_IsVisible = 0x7C;
+                Avatar_Data = 0x10;
+                Avatar_Data_IsTeam = 0x4D;
+                AvatarPropManager = 0x458;
+
+                FollowCamera = 0x3E0;
+                Camera = 0x14;
+                AimRotation = 0x398;
+                MainCameraTransform = 0x200;
+                ViewMatrix = 0x98 + 0x24;
+
+                Weapon = 0x38C;
+                ActiveWeapon = 0x38C;
+                WeaponOnHand = 0x4C;
+                WeaponID = 0x08;
+                WeaponRecoil = 0x0C;
+                WeaponData = 0x64;
+                WeaponInfo = 0x64;
+                WeaponName = 0x58;
+                UnkPlayerWeaponInfoClass = 0x44C;
+
+                NoReload = 0x91;
+                AimAssist = 0x3B8;
+
+                sAim1 = 0x4D0;
+                sAim2 = 0x8DC;
+                sAim3 = 0x38;
+                sAim4 = 0x2C;
+            }
+            else
+            {
+                // ==========================================
+                // FREE FIRE NORMAL OFFSETS (Aapka Current Data)
+                // ==========================================
+                InitBase = 0xA3F438C;
+                StaticClass = 0x5C;
+                CurrentMatch = 0x50;
+                MatchStatus = 0x08;
+                GameTimer = 0x10;
+                FixedDeltaTime = 0x24;
+                SpeedJoystickOffsets = new uint[] { 0x44 };
+
+                LocalPlayer = 0x7C;
+                PlayerRotation = 0xFC;
+                Player_IsDead = 0x4C;
+                Player_Data = 0x44;
+                CurrentHP = 0x2C8;
+                Player_Name = 0x28C;
+                IsBot = 0x294;
+                DictionaryEntities = 0x68;
+                Player_ShadowBase = 0x15E8;
+                PlayerAttributes = 0x45C;
+                DisableAFK = 0x6B2;
+
+                XPose = 0x78;
+                BotOffset = 0x58;
+                AimbotVisible = 0x444;
+
+                AvatarManager = 0x460;
+                Avatar = 0x94;
+                Avatar_IsVisible = 0x7C;
+                Avatar_Data = 0x10;
+                Avatar_Data_IsTeam = 0x51;
+                AvatarPropManager = 0xBC;
+
+                FollowCamera = 0x3F0;
+                Camera = 0x14;
+                AimRotation = 0x3A8;
+                MainCameraTransform = 0x1FC;
+                ViewMatrix = 0x98 + 0x24;
+
+                Weapon = 0x39C;
+                ActiveWeapon = 0x39C;
+                WeaponOnHand = 0x4C;
+                WeaponData = 0x64;
+                WeaponID = 0x08;
+                WeaponName = 0x64;
+                WeaponInfo = 0x64;
+                WeaponRecoil = 0x91;
+                UnkPlayerWeaponInfoClass = 0x444;
+                NoReload = 0x91;
+                AimAssist = 0x3C8;
+
+                sAim1 = 0x4E0;
+                sAim2 = 0x8F0;
+                sAim3 = 0x38;
+                sAim4 = 0x2C;
+            }
+        }
+    }
+}
