@@ -86,7 +86,7 @@ namespace AotForms
                 MatchStatus = 0x74;
                 GameTimer = 0x10;
                 FixedDeltaTime = 0x24;
-                SpeedJoystickOffsets = new uint[] { 0x44 };
+                SpeedJoystickOffsets = 0x44;
 
                 PlayerRotation = 0xFC;
                 LocalPlayer = 0x7C;
@@ -114,7 +114,7 @@ namespace AotForms
                 Camera = 0x14;
                 AimRotation = 0x398;
                 MainCameraTransform = 0x200;
-                ViewMatrix = 0x98 + 0x24;
+                ViewMatrix = 0xBC;
 
                 Weapon = 0x38C;
                 ActiveWeapon = 0x38C;
@@ -145,7 +145,7 @@ namespace AotForms
                 MatchStatus = 0x08;
                 GameTimer = 0x10;
                 FixedDeltaTime = 0x24;
-                SpeedJoystickOffsets = new uint[] { 0x44 };
+                SpeedJoystickOffsets = 0x44;
 
                 LocalPlayer = 0x7C;
                 PlayerRotation = 0xFC;
@@ -174,7 +174,7 @@ namespace AotForms
                 Camera = 0x14;
                 AimRotation = 0x3A8;
                 MainCameraTransform = 0x1FC;
-                ViewMatrix = 0x98 + 0x24;
+                ViewMatrix = 0xBC;
 
                 Weapon = 0x39C;
                 ActiveWeapon = 0x39C;
@@ -197,3 +197,4 @@ namespace AotForms
     }
 
 }
+
