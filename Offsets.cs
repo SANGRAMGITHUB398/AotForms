@@ -78,7 +78,7 @@ namespace AotForms
                 DisableAFK = 0x6B2;
                 XPose = 0x78;
                 BotOffset = 0x58;
-                AimbotVisible = 0x444;
+                AimbotVisible = 0x455;
                 AvatarManager = 0x460;
                 Avatar = 0x94;
                 Avatar_IsVisible = 0x7C;
